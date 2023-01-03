@@ -46,7 +46,6 @@ export default {
         // is a substring of the product name (case insensitive)
         let arr = [p.name.toLowerCase(),p.symbol.toLowerCase()]
         return arr[0].indexOf(this.search.toLowerCase()) != -1 || arr[1].indexOf(this.search.toLowerCase()) != -1;
-
       });
     }
   },
