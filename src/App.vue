@@ -11,7 +11,7 @@ import ThemeToggle from './components/ThemeToggle.vue'
     <ThemeToggle/>
     <div class="wrapper">
 
-      <HelloWorld msg="Coinmarkepcap" />
+      <HelloWorld msg="Coinmarketcap" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">search</RouterLink>
