@@ -14,11 +14,11 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
-    {
-      path: '/search',
-      name: 'Search',
-      component:Search
-    },
+    // {
+    //   path: '/search',
+    //   name: 'Search',
+    //   component:Search
+    // },
     {
       path:'/coins-list',
       name:'Coins',

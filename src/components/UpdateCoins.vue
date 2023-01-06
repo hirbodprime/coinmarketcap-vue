@@ -39,6 +39,7 @@ export default {
                 } else{
                     this.info = 'coins updated!';
                     console.log(response.data);
+                    this.$router.push('/coins-list');
                 }
             })
     },

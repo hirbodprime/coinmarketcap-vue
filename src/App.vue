@@ -14,7 +14,7 @@ import ThemeToggle from './components/ThemeToggle.vue'
       <HelloWorld msg="Coinmarketcap" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/search">search</RouterLink>
+        <!-- <RouterLink to="/search">search</RouterLink> -->
         <RouterLink to="/coins-list">Coins list</RouterLink>
       </nav>
     </div>
@@ -24,7 +24,9 @@ import ThemeToggle from './components/ThemeToggle.vue'
 </div>
 </template>
 
-<style scoped>
+<style>
+
+
 header {
   line-height: 1.5;
   max-height: 100vh;

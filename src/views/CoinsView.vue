@@ -6,7 +6,8 @@
         <li>
             <!-- <a :href="`http://localhost:5173/get-coin/${i.name}`" target="_blank" rel="noopener">{{i.name}}</a> -->
             <RouterLink :to="{name: 'single-coin',params: { symbol_or_name: i.name} }">{{i.name}}</RouterLink>
-            <RouterLink :to="{name: 'get-logo',params: { symbol_or: i.symbol} }" v-if="i.image == null" > | get logo</RouterLink>
+            <!-- <RouterLink :to="{name: 'get-logo',params: { symbol_or: i.symbol} }" v-if="i.image == null" > | get logo</RouterLink> -->
+            <button @click="getLogo(i.symbol)" v-if="i.image == null" > | get logo</button> <p v-if="message == true">Loading...</p>
         </li>
         <li>
             <!-- <a :href="`http://localhost:5173/get-coin/${i.symbol}`" target="_blank" rel="noopener"> -->
@@ -18,7 +19,7 @@
         <li v-if="i.image">
             <br>
            <img :src="i.image" alt=""> 
-        </li>
+        </li> 
     </ul>
     </div>
     <div v-else>
@@ -39,6 +40,7 @@ export default {
     data () {
         return {
             info: '',
+            message: false,
             err:''
         }
     },
@@ -56,6 +58,17 @@ export default {
 
             })
     },
+    methods:{
+        getLogo(symbol_or){
+            console.log(symbol_or,"syasdf");
+        axios
+        .get(`http://127.0.0.1:8000/coin/get-logo/${symbol_or}`)
+        .then(response => {
+                this.message = true
+                window.location.reload()
+            })
+        }
+    }
 }
 </script>
 

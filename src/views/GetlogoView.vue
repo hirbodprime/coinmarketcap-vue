@@ -43,6 +43,7 @@ export default {
         .get(`http://127.0.0.1:8000/coin/get-logo/${this.$route.params.symbol_or}`)
         .then(response => {
                 this.info = true;
+                this.$router.push('/coins-list');
                 console.log(response);
             })
     },

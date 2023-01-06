@@ -1,7 +1,7 @@
 <template>
 <div>
 <div class="search-wrapper panel-heading col-sm-12">
-    <input type="text" @keydown.space.prevent v-model="search" placeholder="Search" /> <br> <br>
+    <input type="text" autocomplete="off" @keydown.space.prevent v-model="search" placeholder="Search" /> <br> <br>
   </div>  
   <table class="table" id="myTable">
     <thead>
@@ -12,9 +12,8 @@
       </tr>
     </thead>
     <tbody>
-      <!-- <p>{{filteredCoins}}</p> -->
       <tr v-for="Coins in filteredCoins" :key="Coins.symbol">
-          <td>{{ Coins.name }}</td>
+          <td @click="setValue(Coins.name)">{{ Coins.name }}</td>
           <td>{{ Coins.symbol }}</td>
           <td>{{ Coins.price }}</td>
       </tr>
@@ -47,7 +46,11 @@ export default {
         let arr = [p.name.toLowerCase(),p.symbol.toLowerCase()]
         return arr[0].indexOf(this.search.toLowerCase()) != -1 || arr[1].indexOf(this.search.toLowerCase()) != -1;
       });
+    },
+    setSsetValue(val){
+      this.search = val
     }
+
   },
   mounted () {
         axios
