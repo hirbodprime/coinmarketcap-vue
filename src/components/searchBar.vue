@@ -1,16 +1,19 @@
 <template>
 <div>
+
     <v-autocomplete
   clearable
-  chips
-  
   label="Find Coins"
   :items=this.info
-  multiple
+  item-text=this.info
+  item-value="id"
+  
   variant="solo"
 >
 
 </v-autocomplete>
+
+<p v-for="i in this.info" :key="i.name">{{i.id}} {{i.name}} {{i.symbol}} {{i.price}}</p>
 <div class="search-wrapper panel-heading col-sm-12" >
   
     <input type="text" autocomplete="off" @keydown.space.prevent v-model="search" placeholder="Search" /> <br> <br>
@@ -44,7 +47,6 @@ export default {
     data() {
     return {
         info: [],
-        info0: [],
         info2: [],
         err:'',
       search: ""
@@ -66,12 +68,17 @@ export default {
                 if (response.data.length == 0){
                     this.err = 'no coin found try scraping it';                    
                 } else{
-                  this.info2 = response.data;
-                    for (let index = 0; index < 10; index++) {
-                      this.info0.push(response.data[index].name,response.data[index].price,response.data[index].symbol);
-                      // this.info.push.this.info0;
-                      this.info.push(response.data[index].name);
-                      
+                  // this.info = response.data;
+                  // this.info2 = response.data;
+                  for (let index = 0; index < 10; index++) {
+                    this.info.push(response.data[index].name);
+                      // this.info = {
+                      //   'name':response.data[index].name,
+                      //   'symbol':response.data[index].symbol,
+                      //   'price':response.data[index].price
+                      //   };
+                      //   console.log(this.info);
+                      //   console.log(this.info.name);      
                     }
                 }
 
