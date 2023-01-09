@@ -17,6 +17,7 @@ defineProps({
       <a href="https://github.com/hirbodprime/django-coinmarketcap" target="_blank" rel="noopener">backend</a> 
     </h3>
   </div>
+  
 </template>
 
 <style scoped>

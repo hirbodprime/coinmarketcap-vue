@@ -1,6 +1,18 @@
 <template>
 <div>
-<div class="search-wrapper panel-heading col-sm-12">
+    <v-autocomplete
+  clearable
+  chips
+  
+  label="Find Coins"
+  :items=this.info
+  multiple
+  variant="solo"
+>
+
+</v-autocomplete>
+<div class="search-wrapper panel-heading col-sm-12" >
+  
     <input type="text" autocomplete="off" @keydown.space.prevent v-model="search" placeholder="Search" /> <br> <br>
   </div>  
   <table class="table" id="myTable">
@@ -13,7 +25,7 @@
     </thead>
     <tbody>
       <tr v-for="Coins in filteredCoins" :key="Coins.symbol">
-          <td @click="setValue(Coins.name)">{{ Coins.name }}</td>
+          <td> {{ Coins.name }}</td>
           <td>{{ Coins.symbol }}</td>
           <td>{{ Coins.price }}</td>
       </tr>
@@ -32,24 +44,19 @@ export default {
     data() {
     return {
         info: [],
+        info0: [],
+        info2: [],
         err:'',
       search: ""
     };
   },
   computed: {
     filteredCoins() {
-        return this.info.filter(p => {
-        // return true if the product should be visible
-
-        // in this example we just check if the search string
-        // is a substring of the product name (case insensitive)
+        return this.info2.filter(p => {
         let arr = [p.name.toLowerCase(),p.symbol.toLowerCase()]
         return arr[0].indexOf(this.search.toLowerCase()) != -1 || arr[1].indexOf(this.search.toLowerCase()) != -1;
       });
     },
-    setSsetValue(val){
-      this.search = val
-    }
 
   },
   mounted () {
@@ -59,7 +66,13 @@ export default {
                 if (response.data.length == 0){
                     this.err = 'no coin found try scraping it';                    
                 } else{
-                    this.info = response.data;
+                  this.info2 = response.data;
+                    for (let index = 0; index < 10; index++) {
+                      this.info0.push(response.data[index].name,response.data[index].price,response.data[index].symbol);
+                      // this.info.push.this.info0;
+                      this.info.push(response.data[index].name);
+                      
+                    }
                 }
 
             })

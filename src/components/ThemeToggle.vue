@@ -8,9 +8,9 @@ const toggleDark = useToggle(isDark)
 <div>
 <!-- <p> isDark: {{ isDark }}</p> -->
 <button @click="toggleDark()"
-class="px-4 py-2 text-white bg-green-500 rounded dark:bg-purple-500">
+class="px-4 py-2 text-white bg-green-500 rounded dark:bg-purple-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
 Theme
-</button>
+</button>&ensp;&ensp;&ensp;&ensp;
 </div>
 </template>
 

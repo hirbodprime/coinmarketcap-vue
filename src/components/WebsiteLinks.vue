@@ -11,6 +11,7 @@ import Search from '../views/SearchView.vue'
 
 <template>
 <div>
+  
   <WelcomeItem>
     <template #icon>
       <CommunityIcon />
