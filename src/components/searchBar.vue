@@ -1,13 +1,10 @@
 <template>
 <div>
 
-    <v-autocomplete
+<v-autocomplete
   clearable
   label="Find Coins"
   :items=this.info
-  item-text=this.info
-  item-value="id"
-  
   variant="solo"
 >
 
@@ -45,7 +42,7 @@ import  axios  from "axios";
 export default {
     name:"Search",
     data() {
-    return {
+    return {  
         info: [],
         info2: [],
         err:'',
@@ -69,16 +66,9 @@ export default {
                     this.err = 'no coin found try scraping it';                    
                 } else{
                   // this.info = response.data;
-                  // this.info2 = response.data;
+                  this.info2 = response.data;
                   for (let index = 0; index < 10; index++) {
                     this.info.push(response.data[index].name);
-                      // this.info = {
-                      //   'name':response.data[index].name,
-                      //   'symbol':response.data[index].symbol,
-                      //   'price':response.data[index].price
-                      //   };
-                      //   console.log(this.info);
-                      //   console.log(this.info.name);      
                     }
                 }
 
