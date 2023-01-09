@@ -1,27 +1,27 @@
 <template>
 <div>
-<div v-if="info">
+<div v-if="info_get_coin">
     <h3>
     {{$route.params.symbol_or_name}}
-        {{info.name}}
+        {{info_get_coin.name}}
     </h3>
     <ul>
         <li>
-            {{info.symbol}} 
+            {{info_get_coin.symbol}} 
         </li>
         <li>
-            {{info.price}}
+            {{info_get_coin.price}}
         </li>
-        <div v-if="info.image != null">
+        <div v-if="info_get_coin.image != null">
         <li>
             <br>
             <!-- {{info}} -->
-            <img :src="`http://127.0.0.1:8000/media/path/logo-${info.symbol}.jpg`" alt=""> 
+            <img :src="`http://127.0.0.1:8000/media/path/logo-${info_get_coin.symbol}.jpg`" alt=""> 
         </li>
         </div>
     </ul>
 </div>
-<div v-else>
+<div v-else-if="info_get_coin == null">
 <PageNotFound />
 </div>
 </div>
@@ -44,7 +44,7 @@ export default {
     },
     data () {
         return {
-            info: '',
+            info_get_coin: '',
         }
     },
     components:{
@@ -55,7 +55,7 @@ export default {
         axios
             .get(`http://127.0.0.1:8000/coin/api/get-coin/${x}`)
             .then(response => {
-                this.info = response.data[0];
+                this.info_get_coin = response.data[0];
                 console.log(this.info);
             })
             .catch(function (error) {

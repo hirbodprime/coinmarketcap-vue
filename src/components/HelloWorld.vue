@@ -10,12 +10,12 @@ defineProps({
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>
-      This project is used for getting  
+    <!-- <h3> -->
+      <!-- This project is used for getting  
       <a href="https://github.com/hirbodprime/coinmarketcap" target="_blank" rel="noopener">coins</a>
        from
-      <a href="https://github.com/hirbodprime/django-coinmarketcap" target="_blank" rel="noopener">backend</a> 
-    </h3>
+      <a href="https://github.com/hirbodprime/django-coinmarketcap" target="_blank" rel="noopener">backend</a>  -->
+    <!-- </h3> -->
   </div>
   
 </template>

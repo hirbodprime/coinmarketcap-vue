@@ -6,11 +6,18 @@ import ThemeToggle from './components/ThemeToggle.vue'
 
 <template>
 <div>
+<!-- 
+  <v-app-bar :elevation="11">
+  <template v-slot:append>
+    <v-btn icon="mdi-heart"></v-btn>
+
+    <v-btn icon="mdi-magnify"></v-btn>
+
+    <v-btn icon="mdi-dots-vertical"></v-btn>
+  </template>
+</v-app-bar> -->
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/download.png" width="125" height="125" />
-
-
-
 
 
 <div class="border-b border-gray-200 dark:border-gray-700">

@@ -14,7 +14,7 @@ import Search from '../views/SearchView.vue'
   
   <WelcomeItem>
     <template #icon>
-      <CommunityIcon />
+      <!-- <CommunityIcon /> -->
     </template>
     <template #heading>Search bar</template>
     <Search/>
@@ -22,7 +22,7 @@ import Search from '../views/SearchView.vue'
 
   <WelcomeItem>
     <template #icon>
-      <DocumentationIcon />
+      <!-- <DocumentationIcon /> -->
     </template>
     <template #heading>Coins List</template>
     <RouterLink to="/coins-list">Here</RouterLink>
@@ -34,7 +34,7 @@ import Search from '../views/SearchView.vue'
 
   <WelcomeItem>
     <template #icon>
-      <ToolingIcon />
+      <!-- <ToolingIcon /> -->
     </template>
     <template #heading>API</template>
 
@@ -52,7 +52,7 @@ import Search from '../views/SearchView.vue'
 
   <WelcomeItem>
     <template #icon>
-      <EcosystemIcon />
+      <!-- <EcosystemIcon /> -->
     </template>
     <template #heading>All links</template>
     <RouterLink to="/coins-list">Coins list</RouterLink>
@@ -68,7 +68,7 @@ import Search from '../views/SearchView.vue'
   <WelcomeItem>
     
     <template #icon>
-      <SupportIcon />
+      <!-- <SupportIcon /> -->
     </template>
     <template #heading>Support Vue</template>
 

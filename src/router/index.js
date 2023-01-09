@@ -40,7 +40,8 @@ const router = createRouter({
       component:GetLogo,
       props: true
     },
-    { path: "/:pathMatch(.*)*",
+    { 
+      path: "/:pathMatch(.*)*",
       name:"not-found",
       component: PageNotFound ,
     }
